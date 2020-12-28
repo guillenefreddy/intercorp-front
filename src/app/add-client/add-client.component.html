@@ -1,0 +1,47 @@
+<h3>Agregar Cliente</h3>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div [hidden]="submitted" style="width: 400px;">  
+      <form [formGroup]="clientsaveform" #saveclient (ngSubmit)="saveClient(saveClient)">  
+          
+            <div class="form-group">  
+              <label for="name">Nombre</label>  
+              <input type="text" class="form-control"  formControlName="client_name" data-toggle="tooltip"   
+                 data-placement="right" title="Ingresa el nombre" >   
+          </div>  
+    
+          <div class="form-group">  
+            <label for="name">Apellido</label>  
+            <input type="text" class="form-control"  formControlName="client_lastname" data-toggle="tooltip"   
+               data-placement="right" title="Ingresa el apellido" >  
+        </div>  
+
+        <div class="form-group">  
+            <label for="name">Edad</label>  
+            <input type="text" class="form-control"  formControlName="client_age" data-toggle="tooltip"   
+               data-placement="right" title="Ingresa la edad" >   
+        </div>  
+
+        <div class="form-group">  
+            <label for="name">Fecha Nacimiento</label>  
+            <input type="text" class="form-control"  formControlName="client_birthday" data-toggle="tooltip"   
+               data-placement="right" title="Ingresa fecha nacimiento" >  
+        </div>  
+    
+          <button type="submit" class="btn btn-success">Grabar</button>  
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4">  
+      <div [hidden]="!submitted">  
+         <h4>Cliente se guardo con exito!!!</h4>  
+         <button (click)="addClientForm()" class='btn btn-primary'>Agregar más clientes</button>  
+      </div>        
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  

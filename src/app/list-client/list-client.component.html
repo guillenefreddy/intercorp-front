@@ -1,0 +1,84 @@
+    <div class="panel panel-default">  
+      <div>&nbsp;</div>
+      <div class="panel-heading">  
+          <h1 style="text-align: center">Clientes</h1>
+          <h5 >Promedio Edad: {{kpiCliente.avg}}</h5> 
+          <h5 >Desviación Estandar: {{kpiCliente.sd}}</h5>
+      </div>  
+      <div>&nbsp;</div>
+
+        
+      <div class="panel-body">  
+          <table  class="table table-hover table-sm" datatable [dtOptions]="dtOptions"  
+          [dtTrigger]="dtTrigger"  >  
+              <thead class="thead-light">  
+                  <tr>  
+                      <th>Nombre</th>  
+                      <th>Apellido</th>  
+                      <th>Edad</th>  
+                      <th></th>  
+                        
+                  </tr>  
+              </thead>  
+              <tbody>  
+                   <tr *ngFor="let c of clients ">  
+                      <td>{{c.name}}</td>  
+                      <td>{{c.lastname}}</td>  
+                      <td>{{c.age}}</td>  
+                      <td>   
+                        <button (click)="detailClient(c.id)" class='btn btn-info'  
+                        data-toggle="modal" data-target="#myModal">Detalle</button>  
+                      </td>  
+                    </tr>   
+              </tbody><br>  
+          </table>  
+      </div>  
+    </div>   
+      
+    <div class="modal" id="myModal">  
+            <div class="modal-dialog">  
+              <div class="modal-content">  
+                <!-- Modal Header -->  
+                <div class="modal-header">  
+                  <h4 class="modal-title" style="text-align: center">Detalle Cliente</h4>  
+                    
+                </div>  
+                  
+                <!-- Modal body -->  
+                <div class="modal-body"  >  
+      
+                    <div class="form-group">  
+                        <label for="name">Nombre</label>  
+                        <input class="form-control" type="text" [(ngModel)]="detail.name"  >  
+                    </div>  
+                                                    
+                    <div class="form-group">  
+                      <label for="name">Apellido</label>  
+                      <input class="form-control" type="text" [(ngModel)]="detail.lastname"  >  
+                  </div> 
+                  
+                  <div class="form-group">  
+                    <label for="name">Edad</label>  
+                    <input class="form-control" type="text" [(ngModel)]="detail.age"  >  
+                </div> 
+
+                <div class="form-group">  
+                  <label for="name">Fecha Nacimiento</label>  
+                  <input class="form-control" type="text" [(ngModel)]="detail.birthday"  >  
+              </div> 
+
+              <div class="form-group">  
+                <label for="name">Fecha Posible Fallecimiento</label>  
+                <input class="form-control" type="text" [(ngModel)]="detail.deathdate"  >  
+            </div>
+
+                </div>  
+                  
+                <!-- Modal footer -->  
+                <div class="modal-footer" >  
+                  <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="clean()">Cerrar</button>  
+                </div>  
+                  
+              </div>  
+            </div>  
+          </div>  
