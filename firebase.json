@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/IntercorpFront",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
