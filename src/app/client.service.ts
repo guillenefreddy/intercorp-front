@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 export class ClientService {  
   
-  private baseUrl = 'http://localhost:8080/client/';  
+  private baseUrl = 'http://3.138.190.81:8000/client/';  
   
   constructor(private http:HttpClient) { }  
   
